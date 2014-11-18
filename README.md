@@ -24,8 +24,10 @@ $ npm install
 <img src="https://github.com/debian789/brazo-mecanico-node-arduino/blob/master/public/images/montaje.png"/>
 
 
+
 ### Demo del funcionamiento 
 
+Video del funcionamiento [aqui]
 
 <iframe width="560" height="315" src="//www.youtube.com/embed/c9vkcL5oW2g" frameborder="0" allowfullscreen></iframe>
 
@@ -35,3 +37,4 @@ $ npm install
 [node]:http://nodejs.org/
 [Arduino]:http://www.arduino.cc/
 [socket.io]:http://socket.io/
+[aqui]:https://www.youtube.com/watch?v=c9vkcL5oW2g
