@@ -24,6 +24,13 @@ $ npm install
 <img src="https://github.com/debian789/brazo-mecanico-node-arduino/blob/master/public/images/montaje.png"/>
 
 
+### Demo del funcionamiento 
+
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/c9vkcL5oW2g" frameborder="0" allowfullscreen></iframe>
+
+
+
 [johnny-five]:https://github.com/rwaldron/johnny-five
 [node]:http://nodejs.org/
 [Arduino]:http://www.arduino.cc/
