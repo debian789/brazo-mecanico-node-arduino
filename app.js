@@ -68,7 +68,7 @@ board.on("ready", function() {
 
 ///  Asociar pines  digitales de Arduino 
 
-  //Controla el movimiento orizontal 
+  //Controla el movimiento horizontal 
   servo_A = new five.Servo({
     pin: 9,
     type: "continuous"

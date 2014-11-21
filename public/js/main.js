@@ -5,12 +5,15 @@ io = io.connect();
 
 $('document').ready(function(){
 
+
+  //Activar el modo automatico 
   $(".automatic").click(function(){
     io.emit('rutina:rutina',{
       valor : 'encendido rutina' 
     });
   });
 
+  //Controlar el movimiento horizontal 
   $( "#servo_A" ).slider({
     orientation: "horizontal",
     range: "min",
@@ -18,12 +21,14 @@ $('document').ready(function(){
     max: 179,
     value: 88,
     slide: function( event, ui ) {
+      // Envia el valor de la posicion del brazon al server 
       io.emit('servo_A:moverse',{
         valor : ui.value 
       });
     }
   });
 
+  //Controlar el movimiento de adelante y atras 
   $( "#servo_B" ).slider({
     orientation: "vertical",
     range: "min",
@@ -31,12 +36,16 @@ $('document').ready(function(){
     max: 80,
     value: 1,
     slide: function( event, ui ) {
+
+      // Envia el valor de la posicion del brazon al server 
       io.emit('servo_B:moverse',{
         valor : ui.value 
       });
     }
   });
 
+
+  // controlar el movimiento de arriba y abajo 
   $( "#servo_C" ).slider({
     orientation: "vertical",
     range: "min",
@@ -44,12 +53,15 @@ $('document').ready(function(){
     max: 179,
     value: 77,
     slide: function( event, ui ) {
+
+      // Envia el valor de la posicion del brazon al server 
       io.emit('servo_C:moverse',{
         valor : ui.value 
       });
     }
   });
 
+  //Controlar el movimiento de abrir y cerrar el brazo 
   $( "#servo_D" ).slider({
     orientation: "horizontal",
     range: "min",
@@ -57,6 +69,8 @@ $('document').ready(function(){
     max: 35,
     value: 35,
     slide: function( event, ui ) {
+
+      // Envia el valor de la posicion del brazon al server 
       io.emit('servo_D:moverse',{
         valor : ui.value 
       });
@@ -68,12 +82,12 @@ $('document').ready(function(){
 // Emit ready event.
 
 
+//// muestra el valor de la posicion actual del brazo 
+
 io.on('rutina_mensaje',function(data){
   $('.mensajeRutina').html(data.message);
 });
 
-
-// Listen for the talk event.
 io.on('servo_A_mensaje', function(data) {
   $('.serva_A_position').html(data.message)
 })  
