@@ -19,7 +19,7 @@ $('document').ready(function(){
     range: "min",
     min: 1,
     max: 179,
-    value: 88,
+    value: 90,
     slide: function( event, ui ) {
       // Envia el valor de la posicion del brazon al server 
       io.emit('servo_A:moverse',{
@@ -32,9 +32,9 @@ $('document').ready(function(){
   $( "#servo_B" ).slider({
     orientation: "vertical",
     range: "min",
-    min: 1,
+    min: 20,
     max: 80,
-    value: 1,
+    value: 56,
     slide: function( event, ui ) {
 
       // Envia el valor de la posicion del brazon al server 
@@ -51,7 +51,7 @@ $('document').ready(function(){
     range: "min",
     min: 1,
     max: 179,
-    value: 77,
+    value: 54,
     slide: function( event, ui ) {
 
       // Envia el valor de la posicion del brazon al server 
@@ -66,8 +66,8 @@ $('document').ready(function(){
     orientation: "horizontal",
     range: "min",
     min: 1,
-    max: 35,
-    value: 35,
+    max: 60,
+    value: 2,
     slide: function( event, ui ) {
 
       // Envia el valor de la posicion del brazon al server 

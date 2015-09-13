@@ -107,10 +107,10 @@ board.on("ready", function() {
   var rutina_ciclo;
 
   // Estado inicial del brazo 
-  servo_A.move(88);
-  servo_B.move(1);
-  servo_C.move(77);
-  servo_D.move(35);
+  servo_A.move(90); // Grirar 
+  servo_B.move(56); // Adelante  - Atraz
+  servo_C.move(54);  // Arriba y Abajo  
+  servo_D.move(2); // Prinzas 
 
 
 
@@ -118,26 +118,49 @@ board.on("ready", function() {
     rutina:function(req){
 
       //Estado inicial de la rutina 
-      servo_A.move(88);
-      servo_B.move(1);
-      servo_C.move(90);
-      servo_D.move(35);
+      servo_A.move(90);
+      servo_B.move(56);
+      servo_C.move(54);
+      servo_D.move(2);
+
+
+	// movimiento inicial al precionar el boton de Automatic 
+	setTimeout(function(){ servo_A.move(1) },2000);
+	setTimeout(function(){ servo_B.move(60) },3000);
+	setTimeout(function(){ servo_D.move(1) },4000);
+	setTimeout(function(){ servo_C.move(70) },5000);
+	setTimeout(function(){ servo_B.move(65) },6000);
+	setTimeout(function(){ servo_B.move(70) },7000);
+	setTimeout(function(){ servo_D.move(35) },8000);
+	setTimeout(function(){ servo_B.move(50) },9000);
+	setTimeout(function(){ servo_A.move(170) },10000);
+	setTimeout(function(){ servo_C.move(120) },11000);
+	setTimeout(function(){ servo_B.move(70) },12000);
+	setTimeout(function(){ servo_D.move(1) },13000);
+	setTimeout(function(){ servo_B.move(45) },14000);
+	setTimeout(function(){ servo_C.move(80) },15000);
+
+
+
+
 
       //Rutina que esta asociada al tiempo y posiciones de los servo motores
       rutina_ciclo = setInterval(function(){
         setTimeout(function(){ servo_A.move(1) },2000);
-        setTimeout(function(){ servo_B.move(1) },3000);
+        setTimeout(function(){ servo_B.move(60) },3000);
         setTimeout(function(){ servo_D.move(1) },4000);
-        setTimeout(function(){ servo_B.move(10) },4100);
-        setTimeout(function(){ servo_B.move(20) },4200);
-        setTimeout(function(){ servo_B.move(30) },4300);
-        setTimeout(function(){ servo_B.move(40) },4400);
-        setTimeout(function(){ servo_B.move(40) },5000);
-        setTimeout(function(){ servo_D.move(35) },6000);
-        setTimeout(function(){ servo_B.move(20) },7000);
-        setTimeout(function(){ servo_A.move(170) },8000);
-        setTimeout(function(){ servo_D.move(1) },9000);
-      }, 10000);
+  	setTimeout(function(){ servo_C.move(70) },5000);
+ 	setTimeout(function(){ servo_B.move(65) },6000);
+        setTimeout(function(){ servo_B.move(70) },7000);
+        setTimeout(function(){ servo_D.move(35) },8000);
+        setTimeout(function(){ servo_B.move(50) },9000);
+        setTimeout(function(){ servo_A.move(170) },10000);
+	setTimeout(function(){ servo_C.move(120) },11000);
+        setTimeout(function(){ servo_B.move(70) },12000);
+ 	setTimeout(function(){ servo_D.move(1) },13000);
+ 	setTimeout(function(){ servo_B.move(45) },14000);
+	setTimeout(function(){ servo_C.move(80) },15000);
+      }, 16000);
 
       // Mensaje de que se ha iniciado el modo automatico 
       req.io.emit('rutina_mensaje',{
