@@ -2,10 +2,7 @@
 // establecer conexion con socket.io
 io = io.connect();
 
-
 $('document').ready(function(){
-
-
   //Activar el modo automatico 
   $(".automatic").click(function(){
     io.emit('rutina:rutina',{
@@ -36,14 +33,12 @@ $('document').ready(function(){
     max: 80,
     value: 56,
     slide: function( event, ui ) {
-
       // Envia el valor de la posicion del brazon al server 
       io.emit('servo_B:moverse',{
         valor : ui.value 
       });
     }
   });
-
 
   // controlar el movimiento de arriba y abajo 
   $( "#servo_C" ).slider({
@@ -53,7 +48,6 @@ $('document').ready(function(){
     max: 179,
     value: 54,
     slide: function( event, ui ) {
-
       // Envia el valor de la posicion del brazon al server 
       io.emit('servo_C:moverse',{
         valor : ui.value 
@@ -69,7 +63,6 @@ $('document').ready(function(){
     max: 60,
     value: 2,
     slide: function( event, ui ) {
-
       // Envia el valor de la posicion del brazon al server 
       io.emit('servo_D:moverse',{
         valor : ui.value 
@@ -80,9 +73,7 @@ $('document').ready(function(){
 });
 
 // Emit ready event.
-
-
-//// muestra el valor de la posicion actual del brazo 
+// muestra el valor de la posicion actual del brazo 
 
 io.on('rutina_mensaje',function(data){
   $('.mensajeRutina').html(data.message);
